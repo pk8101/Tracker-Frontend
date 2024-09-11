@@ -1,12 +1,18 @@
 import './App.css';
-
+import { SignIn,SignUp } from './pages/Main';
+import React from 'react';
 function App() {
   return (
-    <div className="App">
+    <>
+    {/* <div className="App">
       <header className="App-header">
         Hello Trackers!!
       </header>
-    </div>
+    </div> */}
+    <SignIn/>
+    {/* <SignUp/> */}
+
+    </>
   );
 }
 
