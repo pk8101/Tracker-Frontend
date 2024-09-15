@@ -5,6 +5,10 @@ function SignIn() {
 
   const[userName,setUserName]=useState('')
   const[password,setPassword]=useState('')
+  const[details,setDetails]=useState({
+    username:'',
+    password:''
+  })
 
   const handleUserName=(e)=>{
     let x=e.target.value;
@@ -18,7 +22,12 @@ function SignIn() {
   }
   const handleSubmit=()=>{
     //need to handle submit that username and password need to give to backend
-    console.log(userName,password)
+    setDetails({
+      username:userName,
+      password:password
+    })
+    //need to handle post request 
+    console.log(details)
   }
   return (
     <div className='signin'>
@@ -37,7 +46,7 @@ function SignIn() {
                             required />
                     
                     <label htmlFor="password">Password:</label>
-                    <input type="password" 
+                    <input type='password' 
                             id='password' 
                             name='password' //for backend same name
                             value={password} 
