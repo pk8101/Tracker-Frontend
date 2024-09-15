@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import {Link} from 'react-router-dom';
+
 function SignIn() {
 
   const[userName,setUserName]=useState('')
@@ -45,6 +47,9 @@ function SignIn() {
                     
                     <button type="submit">SignIn</button>
                 </form>
+            </div>
+            <div className="signintail">
+                <Link to="/forgetpassword">forget password?</Link>
             </div>
         </div>
     </div>
