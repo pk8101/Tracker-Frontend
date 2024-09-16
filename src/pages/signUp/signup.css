@@ -1,6 +1,6 @@
-/* signin.css */
+/* signup.css */
 
-.signin {
+.signup {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,32 +9,22 @@
     background-color: #f4f4f9;
   }
   
-  .welcomemessage {
+  .signupheader {
     font-size: 1.5rem;
     color: #333;
     margin-bottom: 20px;
     font-weight: 500;
   }
   
-  .details {
-    width: 350px;
+  .signupbody {
+    width: 400px;
     padding: 20px;
     background-color: white;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
   }
   
-  .signinhead {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .signinhead h1 {
-    font-size: 2rem;
-    color: #4a4e69;
-  }
-  
-  .signinbody {
+  .signupbody form {
     display: flex;
     flex-direction: column;
   }
@@ -75,18 +65,11 @@
     background-color: #343a56;
   }
   
-  .signintail {
+  .signuptail {
     margin-top: 10px;
     text-align: center;
-  }
-  
-  .signintail a {
-    text-decoration: none;
-    color: #4a4e69;
+    font-size: 1rem;
+    color: #555;
     font-weight: 500;
-  }
-  
-  .signintail a:hover {
-    text-decoration: underline;
   }
   

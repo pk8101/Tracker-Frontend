@@ -1,0 +1,75 @@
+/* create.css */
+
+.create {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #eef2f7;
+  }
+  
+  .createhead {
+    font-size: 1.8rem;
+    color: #2b2d42;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  
+  .createbody {
+    width: 360px;
+    padding: 25px;
+    background-color: #fff;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+  }
+  
+  .createbody form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #2b2d42;
+  }
+  
+  input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #c1c1c1;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #2b2d42;
+  }
+  
+  button {
+    background-color: #2b2d42;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #1d1f33;
+  }
+  
+  .createtail {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 1rem;
+    color: #555;
+    font-weight: 500;
+  }
+  

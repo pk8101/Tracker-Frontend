@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import './createnew.css'
 
 function CreateNewPassword() {
   const[password,setPassword]=useState('')
