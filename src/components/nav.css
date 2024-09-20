@@ -1,0 +1,31 @@
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Space out items */
+    align-items: center; /* Center items vertically */
+    background-color: #282c34;
+    padding: 1rem;
+    color: white;
+    position: sticky; /* Keep navbar fixed at the top */
+    top: 0; /* Position at the top of the viewport */
+    width: 100%; /* Ensure it takes the full width */
+    z-index: 1000; /* Keep it above other content */
+  }
+  
+  .navbar .brand {
+    font-size: 1.5rem; /* Increase font size for the brand */
+  }
+  
+  .navbar .links {
+    display: flex; /* Make the links container a flexbox */
+  }
+  
+  .navbar a {
+    color: white;
+    text-decoration: none; /* Remove underline */
+    margin: 0 15px; /* Add spacing between links */
+  }
+  
+  .navbar a:hover {
+    text-decoration: none; /* Ensure no underline on hover */
+  }
+  
