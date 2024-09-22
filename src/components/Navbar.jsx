@@ -20,7 +20,7 @@ function Navbar() {
         </div>
 
         <Routes>
-        <Route path='/' element={<TrackerMain/>} exact/>
+            <Route path='/*' element={<TrackerMain/>} exact/>
             <Route path='/signin' element={<SignIn/>} exact/>
             <Route path='/signup' element={<SignUp/>}/>
             <Route path='/forgetpassword' element={<ForgetPassword/>}/>
