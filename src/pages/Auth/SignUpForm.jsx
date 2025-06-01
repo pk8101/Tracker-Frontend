@@ -11,9 +11,10 @@ import axiosInstance from "../../utils/axiosInstance";
 
 const SignUpForm = () => {
   const [profilePic, setProfilePic] = useState(null);
-  const [fullName, setFullName] = useState("");
+  const [username, setusername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [cpassword,setCPassword]=useState("");
 
   const [error, setError] = useState(null);
 
@@ -26,7 +27,7 @@ const SignUpForm = () => {
 
     let profileImageUrl = "";
 
-    if (!fullName) {
+    if (!username) {
       setError("Please enter your name");
       return;
     }
@@ -41,6 +42,16 @@ const SignUpForm = () => {
       return;
     }
 
+    if(!cpassword){
+      setError("Please enter the confirm password")
+      return
+    }
+    
+    if(password!==cpassword){
+      setError("Please enter the same password")
+      return
+    }
+
     setError("");
 
     // SignUp API Call
@@ -49,10 +60,17 @@ const SignUpForm = () => {
       if (profilePic) {
         const imgUploadRes = await uploadImage(profilePic);
         profileImageUrl = imgUploadRes.imageUrl || "";
+      }else {
+        // Set default image URL from public folder
+        const response = await fetch('/profilepic.png');
+        const blob = await response.blob();
+        const file = new File([blob], 'profilepic.png', { type: blob.type });
+        const imgUploadRes = await uploadImage(file);
+        profileImageUrl = imgUploadRes.imageUrl || "";
       }
 
       const response = await axiosInstance.post(API_PATHS.AUTH.REGISTER, {
-        fullName,
+        username,
         email,
         password,
         profileImageUrl,
@@ -87,8 +105,8 @@ const SignUpForm = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Input
-              value={fullName}
-              onChange={({ target }) => setFullName(target.value)}
+              value={username}
+              onChange={({ target }) => setusername(target.value)}
               label="Full Name"
               placeholder="John"
               type="text"
@@ -101,8 +119,22 @@ const SignUpForm = () => {
               placeholder="john@example.com"
               type="text"
             />
+            <Input
+                value={password}
+                onChange={({ target }) => setPassword(target.value)}
+                label="Password"
+                placeholder="Min 8 Characters"
+                type="password"
+              />
+              <Input
+                value={cpassword}
+                onChange={({ target }) => setCPassword(target.value)}
+                label="Confirm Password"
+                placeholder="Min 8 Characters"
+                type="password"
+              />
 
-            <div className="col-span-2">
+            {/* <div className="col-span-2">
               <Input
                 value={password}
                 onChange={({ target }) => setPassword(target.value)}
@@ -110,7 +142,7 @@ const SignUpForm = () => {
                 placeholder="Min 8 Characters"
                 type="password"
               />
-            </div>
+            </div> */}
           </div>
 
           {error && <p className="text-red-500 text-xs pb-2.5">{error}</p>}

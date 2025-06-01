@@ -3,8 +3,8 @@ export const BASE_URL = "http://localhost:8000";
 // utils/apiPaths.js
 export const API_PATHS = {
   AUTH: {
-    LOGIN: "/api/v1/auth/login",
-    REGISTER: "/api/v1/auth/register",
+    LOGIN: "/user/login",
+    REGISTER: "/user/register",
     GET_USER_INFO: "/api/v1/auth/getUser",
   },
   DASHBOARD: {
@@ -23,6 +23,6 @@ export const API_PATHS = {
     DOWNLOAD_EXPENSE: `/api/v1/expense/downloadexcel`,
   },
   IMAGE: {
-    UPLOAD_IMAGE: "/api/v1/auth/upload-image",
+    UPLOAD_IMAGE: "/user/upload-image",
   },
 };
