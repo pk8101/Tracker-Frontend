@@ -5,7 +5,7 @@ export const API_PATHS = {
   AUTH: {
     LOGIN: "/user/login",
     REGISTER: "/user/register",
-    GET_USER_INFO: "/api/v1/auth/getUser",
+    GET_USER_INFO: "/user/user_data",
   },
   DASHBOARD: {
     GET_DATA: "/api/v1/dashboard",
@@ -23,6 +23,6 @@ export const API_PATHS = {
     DOWNLOAD_EXPENSE: `/api/v1/expense/downloadexcel`,
   },
   IMAGE: {
-    UPLOAD_IMAGE: "/user/upload-image",
+    UPLOAD_IMAGE: "/user/upload_image",
   },
 };
