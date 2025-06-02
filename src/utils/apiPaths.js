@@ -8,19 +8,19 @@ export const API_PATHS = {
     GET_USER_INFO: "/user/user_data",
   },
   DASHBOARD: {
-    GET_DATA: "/api/v1/dashboard",
+    GET_DATA: "/user/dashboard",
   },
   INCOME:{
-    ADD_INCOME: "/api/v1/income/add",
-    GET_ALL_INCOME: "/api/v1/income/get",
-    DELETE_INCOME: (incomeId) =>  `/api/v1/income/${incomeId}`,
-    DOWNLOAD_INCOME: `/api/v1/income/downloadexcel`,
+    ADD_INCOME: "/income/income_create",
+    GET_ALL_INCOME: "/income/income_details",
+    DELETE_INCOME: (incomeId) =>  `/income/income_delete/${incomeId}`,
+    DOWNLOAD_INCOME: `/income/income_download`,
   },
   EXPENSE:{
-    ADD_EXPENSE: "/api/v1/expense/add",
-    GET_ALL_EXPENSE: "/api/v1/expense/get",
-    DELETE_EXPENSE: (expenseId) =>  `/api/v1/expense/${expenseId}`,
-    DOWNLOAD_EXPENSE: `/api/v1/expense/downloadexcel`,
+    ADD_EXPENSE: "/expense/expense_create",
+    GET_ALL_EXPENSE: "/expense/expense_details",
+    DELETE_EXPENSE: (expenseId) =>  `/expense/expense_delete/${expenseId}`,
+    DOWNLOAD_EXPENSE: `/expense/expense_download`,
   },
   IMAGE: {
     UPLOAD_IMAGE: "/user/upload_image",
