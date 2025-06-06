@@ -35,7 +35,7 @@ const SideMenu = ({ activeMenu }) => {
           />
         ) : (
           <CharAvatar
-            fullName={username}
+            fullName={user?.username || ""}
             width="w-20"
             height="h-20"
             style="text-xl"
