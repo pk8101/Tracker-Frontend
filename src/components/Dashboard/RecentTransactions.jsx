@@ -1,5 +1,5 @@
 import React from "react";
-import TransactionInfoCard from "../cards/TransactionInfoCard";
+import TransactionInfoCard from "../Cards/TransactionInfoCard";
 import { LuArrowRight } from "react-icons/lu";
 import moment from "moment";
 
