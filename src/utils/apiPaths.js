@@ -5,6 +5,7 @@ export const API_PATHS = {
   AUTH: {
     LOGIN: "/user/login",
     REGISTER: "/user/register",
+    VERIFY_OTP:"/user/verify-otp",
     GET_USER_INFO: "/user/user_data",
   },
   DASHBOARD: {

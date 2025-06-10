@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import AuthLayout from "../../components/Layouts/AuthLayout";
 import { Link, useNavigate } from "react-router-dom";
 import Input from "../../components/Inputs/Input";
@@ -6,7 +6,6 @@ import { validateEmail } from "../../utils/helper";
 import ProfilePhotoSelector from "../../components/Inputs/ProfilePhotoSelector";
 import { API_PATHS } from "../../utils/apiPaths";
 import uploadImage from "../../utils/uploadImage";
-import { UserContext } from "../../context/UserContext";
 import axiosInstance from "../../utils/axiosInstance";
 
 const SignUpForm = () => {
@@ -18,7 +17,6 @@ const SignUpForm = () => {
 
   const [error, setError] = useState(null);
 
-  const { updateUser } = useContext(UserContext);
   const navigate = useNavigate();
 
   // Handle Sign Up Form Submit
@@ -76,12 +74,8 @@ const SignUpForm = () => {
         profileImageUrl,
       });
 
-      const { token, user } = response.data;
-
-      if (token) {
-        localStorage.setItem("token", token);
-        updateUser(user);
-        navigate("/dashboard");
+        if (response.data?.message !== "") {
+          navigate("/verify-otp", { state: { email } });
       }
     } catch (error) {
       if (error.response && error.response.data.message) {

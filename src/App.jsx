@@ -8,7 +8,7 @@ import React from "react";
 import LoginForm from "./pages/Auth/LoginForm";
 import SignUpForm from "./pages/Auth/SignUpForm";
 import UserProvider from "./context/UserContext";
-
+import VerifyOtpForm from "./pages/Auth/VerifyOtpForm";
 import { Toaster } from "react-hot-toast";
 import Home from "./pages/Dashboard/Home";
 import Income from "./pages/Dashboard/Income";
@@ -26,6 +26,7 @@ const App = () => {
             <Route path="/dashboard" exact element={<Home />} />
             <Route path="/income" exact element={<Income />} />
             <Route path="/expense" exact element={<Expense />} />
+            <Route path="/verify-otp" element={<VerifyOtpForm />} />
           </Routes>
         </Router>
 
@@ -33,11 +34,10 @@ const App = () => {
           toastOptions={{
             className: "",
             style: {
-              fontSize:'13px'
+              fontSize: "13px",
             },
           }}
         />
-        
       </UserProvider>
     </div>
   );
@@ -50,9 +50,9 @@ const Root = () => {
 
   // Redirect to dashboard if authenticated, otherwise to login
   return isAuthenticated ? (
-    <Navigate to="/dashboard"/>
+    <Navigate to="/dashboard" />
   ) : (
-    <Navigate to="/login"/>
+    <Navigate to="/login" />
   );
 };
 
