@@ -1,4 +1,4 @@
-export const BASE_URL = "https://tracker-backend-production-c64f.up.railway.app";
+export const BASE_URL = "http://52.66.31.1:8000";
 
 // utils/apiPaths.js
 export const API_PATHS = {
